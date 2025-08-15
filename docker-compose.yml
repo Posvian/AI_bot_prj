@@ -1,0 +1,15 @@
+version: "0.1"
+
+services:
+  service:
+    build: .
+    environment:
+      - TELEGRAM_BOT_TOKEN=${TELEGRAM_BOT_TOKEN}
+      - AUTHORIZATION_STRING=${AUTHORIZATION_STRING}
+    ports:
+      - "8000:8000"
+    volumes:
+      - vectorstore:/app/vectorstore
+
+volumes:
+  vectorstore:
